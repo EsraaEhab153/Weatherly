@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAC631472FE45B5F00F161DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631462FE45B5F00F161DF /* Constants.swift */; };
+		CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */; };
 		CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */; };
 		CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759E12FE327C9002C9066 /* ContentView.swift */; };
 		CAC759E42FE327CB002C9066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC759E32FE327CB002C9066 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CAC631462FE45B5F00F161DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CAC759DC2FE327C9002C9066 /* Weatherly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlyApp.swift; sourceTree = "<group>"; };
 		CAC759E12FE327C9002C9066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAC631452FE45B3700F161DF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CAC631462FE45B5F00F161DF /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		CAC759D32FE327C9002C9066 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		CAC759F02FE34AF7002C9066 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -122,6 +135,7 @@
 		CAC759F32FE34B8C002C9066 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CAC631452FE45B3700F161DF /* Constants */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -215,6 +229,8 @@
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
 				CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */,
 				CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */,
+				CAC631472FE45B5F00F161DF /* Constants.swift in Sources */,
+				CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
