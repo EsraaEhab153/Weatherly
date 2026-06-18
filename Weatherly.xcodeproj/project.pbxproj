@@ -11,6 +11,7 @@
 		CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759E12FE327C9002C9066 /* ContentView.swift */; };
 		CAC759E42FE327CB002C9066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC759E32FE327CB002C9066 /* Assets.xcassets */; };
 		CAC759E72FE327CB002C9066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC759E62FE327CB002C9066 /* Preview Assets.xcassets */; };
+		CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759F62FE35D22002C9066 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CAC759E12FE327C9002C9066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CAC759E32FE327CB002C9066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC759E62FE327CB002C9066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CAC759F62FE35D22002C9066 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,11 @@
 		CAC759DE2FE327C9002C9066 /* Weatherly */ = {
 			isa = PBXGroup;
 			children = (
-				CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */,
+				CAC759F42FE34CB2002C9066 /* App */,
+				CAC759F32FE34B8C002C9066 /* Utils */,
+				CAC759EF2FE34AE4002C9066 /* Data */,
+				CAC759EE2FE34AA1002C9066 /* Domain */,
+				CAC759ED2FE34A89002C9066 /* Presentation */,
 				CAC759E12FE327C9002C9066 /* ContentView.swift */,
 				CAC759E32FE327CB002C9066 /* Assets.xcassets */,
 				CAC759E52FE327CB002C9066 /* Preview Content */,
@@ -65,6 +71,75 @@
 				CAC759E62FE327CB002C9066 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CAC759ED2FE34A89002C9066 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CAC759EE2FE34AA1002C9066 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CAC759F52FE35D0A002C9066 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CAC759EF2FE34AE4002C9066 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CAC759F22FE34B08002C9066 /* Repository */,
+				CAC759F12FE34B00002C9066 /* Local */,
+				CAC759F02FE34AF7002C9066 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CAC759F02FE34AF7002C9066 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CAC759F12FE34B00002C9066 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CAC759F22FE34B08002C9066 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		CAC759F32FE34B8C002C9066 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CAC759F42FE34CB2002C9066 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CAC759F52FE35D0A002C9066 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CAC759F62FE35D22002C9066 /* WeatherModel.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
+				CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */,
 				CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
