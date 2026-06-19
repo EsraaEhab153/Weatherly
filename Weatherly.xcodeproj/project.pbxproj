@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA4EE6DC2FE60A3000745815 /* TopWeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */; };
+		CA4EE6DE2FE610ED00745815 /* MiddleWeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */; };
+		CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */; };
+		CA4EE6E22FE6260800745815 /* StateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6E12FE6260800745815 /* StateCard.swift */; };
 		CAC631472FE45B5F00F161DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631462FE45B5F00F161DF /* Constants.swift */; };
 		CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */; };
+		CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6314E2FE4716200F161DF /* HomeViewModel.swift */; };
+		CAC631512FE475A600F161DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631502FE475A600F161DF /* HomeView.swift */; };
+		CAC631542FE49AA000F161DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631532FE49AA000F161DF /* Extensions.swift */; };
 		CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */; };
 		CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC759E12FE327C9002C9066 /* ContentView.swift */; };
 		CAC759E42FE327CB002C9066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC759E32FE327CB002C9066 /* Assets.xcassets */; };
@@ -17,8 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopWeatherSection.swift; sourceTree = "<group>"; };
+		CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleWeatherSection.swift; sourceTree = "<group>"; };
+		CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStateSection.swift; sourceTree = "<group>"; };
+		CA4EE6E12FE6260800745815 /* StateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCard.swift; sourceTree = "<group>"; };
 		CAC631462FE45B5F00F161DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
+		CAC6314E2FE4716200F161DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CAC631502FE475A600F161DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CAC631532FE49AA000F161DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CAC759DC2FE327C9002C9066 /* Weatherly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC759DF2FE327C9002C9066 /* WeatherlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlyApp.swift; sourceTree = "<group>"; };
 		CAC759E12FE327C9002C9066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +58,51 @@
 				CAC631462FE45B5F00F161DF /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CAC6314A2FE4620C00F161DF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6314B2FE4622100F161DF /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CAC6314B2FE4622100F161DF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6314D2FE4623200F161DF /* View */,
+				CAC6314C2FE4622900F161DF /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CAC6314C2FE4622900F161DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CAC6314E2FE4716200F161DF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CAC6314D2FE4623200F161DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAC631502FE475A600F161DF /* HomeView.swift */,
+				CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */,
+				CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */,
+				CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */,
+				CA4EE6E12FE6260800745815 /* StateCard.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAC631522FE49A8000F161DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAC631532FE49AA000F161DF /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CAC759D32FE327C9002C9066 = {
@@ -88,6 +147,7 @@
 		CAC759ED2FE34A89002C9066 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CAC6314A2FE4620C00F161DF /* Modules */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -135,6 +195,7 @@
 		CAC759F32FE34B8C002C9066 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CAC631522FE49A8000F161DF /* Extensions */,
 				CAC631452FE45B3700F161DF /* Constants */,
 			);
 			path = Utils;
@@ -227,8 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
+				CAC631512FE475A600F161DF /* HomeView.swift in Sources */,
+				CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */,
+				CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */,
+				CA4EE6DE2FE610ED00745815 /* MiddleWeatherSection.swift in Sources */,
+				CA4EE6DC2FE60A3000745815 /* TopWeatherSection.swift in Sources */,
+				CAC631542FE49AA000F161DF /* Extensions.swift in Sources */,
 				CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */,
 				CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */,
+				CA4EE6E22FE6260800745815 /* StateCard.swift in Sources */,
 				CAC631472FE45B5F00F161DF /* Constants.swift in Sources */,
 				CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */,
 			);
