@@ -26,7 +26,7 @@ struct TopWeatherSection: View {
                 ProgressView()
             }
             
-            .frame(width: 80, height: 80,alignment: .center)
+            .frame(width: 150, height: 150,alignment: .center)
             
             Text("\(Int(current.tempC))°")
                 .font(.system(size: 64,weight: .thin))

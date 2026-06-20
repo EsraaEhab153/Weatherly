@@ -10,9 +10,14 @@ import SwiftUI
 struct StateCard: View {
     let title : String
     let value : String
+    let customImageName: String
     
     var body: some View {
         VStack{
+            Image(customImageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
             Text(title)
                 .font(.caption)
                 .opacity(0.8)

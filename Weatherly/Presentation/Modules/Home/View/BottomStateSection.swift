@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct BottomStateSection: View {
+    
+    let current : Current
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                StateCard(title: "VISIBILITY", value: "\(Int(current.visKm)) km", customImageName: "humidity")
+                StateCard(title: "HUMIDITY", value: "\(current.humidity)%", customImageName: "visible")
+            }
+            HStack(spacing: 20) {
+                StateCard(title: "FEELS LIKE", value: "\(Int(current.feelslikeC))°", customImageName: "weather")
+                StateCard(title: "PRESSURE", value: "\(Int(current.pressureMb))", customImageName: "barometer")
+            }
+        }
     }
-}
-
-#Preview {
-    BottomStateSection()
 }

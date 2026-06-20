@@ -32,6 +32,8 @@ struct HomeView: View {
                             
                             MiddleWeatherSection(forecastDays: weather.forecast.forecastday)
                             
+                            BottomStateSection(current: weather.current)
+                            
                         }
                         .padding()
                     }
