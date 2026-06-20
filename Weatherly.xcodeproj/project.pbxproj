@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA4EE6DC2FE60A3000745815 /* TopWeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */; };
+		CA4EE6DE2FE610ED00745815 /* MiddleWeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */; };
 		CAC631472FE45B5F00F161DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631462FE45B5F00F161DF /* Constants.swift */; };
 		CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */; };
 		CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6314E2FE4716200F161DF /* HomeViewModel.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopWeatherSection.swift; sourceTree = "<group>"; };
+		CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleWeatherSection.swift; sourceTree = "<group>"; };
 		CAC631462FE45B5F00F161DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CAC6314E2FE4716200F161DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				CAC631502FE475A600F161DF /* HomeView.swift */,
 				CA4EE6DB2FE60A3000745815 /* TopWeatherSection.swift */,
+				CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
 				CAC631512FE475A600F161DF /* HomeView.swift in Sources */,
 				CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */,
+				CA4EE6DE2FE610ED00745815 /* MiddleWeatherSection.swift in Sources */,
 				CA4EE6DC2FE60A3000745815 /* TopWeatherSection.swift in Sources */,
 				CAC631542FE49AA000F161DF /* Extensions.swift in Sources */,
 				CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */,

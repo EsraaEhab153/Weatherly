@@ -30,6 +30,8 @@ struct HomeView: View {
                         VStack(spacing: 40) {
                             TopWeatherSection(location: weather.location, current: weather.current, todayForecast: weather.forecast.forecastday.first)
                             
+                            MiddleWeatherSection(forecastDays: weather.forecast.forecastday)
+                            
                         }
                         .padding()
                     }
