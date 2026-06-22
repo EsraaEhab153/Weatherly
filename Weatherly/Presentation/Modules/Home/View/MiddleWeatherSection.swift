@@ -20,7 +20,7 @@ struct MiddleWeatherSection: View {
             Divider()
             
             ForEach(forecastDays, id: \.date) { day in
-                NavigationLink(destination: HourlyForecastView(hours: day.hour)) {
+                NavigationLink(destination: HourlyForecastView(hours: day.hour,dateString: day.date)) {
                     HStack {
                         Text(day.date.toDayName())
                             .frame(maxWidth: .infinity, alignment: .leading)

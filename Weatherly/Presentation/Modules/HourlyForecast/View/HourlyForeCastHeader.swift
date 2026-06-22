@@ -23,7 +23,7 @@ struct HourlyForeCastHeader: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        .frame(width: 40, height: 40)
+                        .frame(width: 50, height: 50)
                         
                         
                         Text("\(Int(hour.tempC))°")

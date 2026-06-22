@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HourlyForecastView: View {
     let hours: [Hour]
+    let dateString: String
     
     var currentTimeOfDay : TimeOfDay {
         Date().timeOfDay
@@ -21,8 +22,16 @@ struct HourlyForecastView: View {
             Image(currentTimeOfDay.backgroundImageName)
                 .resizable()
                 .ignoresSafeArea()
+            VStack{
+                Text(dateString.toFormattedDate())
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(currentTimeOfDay.textColor)
+                                    .padding(.top, 10)
+                
+                HourlyForeCastHeader(hours: hours)
+            }
             
-           HourlyForeCastHeader(hours: hours)
             
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -44,5 +53,5 @@ struct HourlyForecastView: View {
         Hour(time: "2026-06-22 18:00", tempC: 12.0, condition: dummyCondition)
     ]
     
-    return HourlyForecastView(hours: dummyHours)
+    return HourlyForecastView(hours: dummyHours, dateString: "2026-06-22")
 }
