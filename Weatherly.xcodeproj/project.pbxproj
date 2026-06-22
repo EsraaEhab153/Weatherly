@@ -11,6 +11,8 @@
 		CA4EE6DE2FE610ED00745815 /* MiddleWeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */; };
 		CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */; };
 		CA4EE6E22FE6260800745815 /* StateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6E12FE6260800745815 /* StateCard.swift */; };
+		CA6D89462FE9EA5F00FE4672 /* HourlyForeCastHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D89452FE9EA5F00FE4672 /* HourlyForeCastHeader.swift */; };
+		CAA07A322FE6650A00D7BE8F /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA07A312FE6650A00D7BE8F /* HourlyForecastView.swift */; };
 		CAC631472FE45B5F00F161DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631462FE45B5F00F161DF /* Constants.swift */; };
 		CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */; };
 		CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC6314E2FE4716200F161DF /* HomeViewModel.swift */; };
@@ -28,6 +30,8 @@
 		CA4EE6DD2FE610ED00745815 /* MiddleWeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleWeatherSection.swift; sourceTree = "<group>"; };
 		CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStateSection.swift; sourceTree = "<group>"; };
 		CA4EE6E12FE6260800745815 /* StateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCard.swift; sourceTree = "<group>"; };
+		CA6D89452FE9EA5F00FE4672 /* HourlyForeCastHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForeCastHeader.swift; sourceTree = "<group>"; };
+		CAA07A312FE6650A00D7BE8F /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		CAC631462FE45B5F00F161DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		CAC6314E2FE4716200F161DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -52,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAA07A2F2FE663F200D7BE8F /* HourlyForecast */ = {
+			isa = PBXGroup;
+			children = (
+				CAA07A302FE664D000D7BE8F /* View */,
+			);
+			path = HourlyForecast;
+			sourceTree = "<group>";
+		};
+		CAA07A302FE664D000D7BE8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAA07A312FE6650A00D7BE8F /* HourlyForecastView.swift */,
+				CA6D89452FE9EA5F00FE4672 /* HourlyForeCastHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CAC631452FE45B3700F161DF /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +84,7 @@
 		CAC6314A2FE4620C00F161DF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CAA07A2F2FE663F200D7BE8F /* HourlyForecast */,
 				CAC6314B2FE4622100F161DF /* Home */,
 			);
 			path = Modules;
@@ -287,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6D89462FE9EA5F00FE4672 /* HourlyForeCastHeader.swift in Sources */,
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
 				CAC631512FE475A600F161DF /* HomeView.swift in Sources */,
 				CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */,
@@ -295,6 +318,7 @@
 				CA4EE6DC2FE60A3000745815 /* TopWeatherSection.swift in Sources */,
 				CAC631542FE49AA000F161DF /* Extensions.swift in Sources */,
 				CAC759F72FE35D22002C9066 /* WeatherModel.swift in Sources */,
+				CAA07A322FE6650A00D7BE8F /* HourlyForecastView.swift in Sources */,
 				CAC759E02FE327C9002C9066 /* WeatherlyApp.swift in Sources */,
 				CA4EE6E22FE6260800745815 /* StateCard.swift in Sources */,
 				CAC631472FE45B5F00F161DF /* Constants.swift in Sources */,

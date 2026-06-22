@@ -47,6 +47,7 @@ struct HomeView: View {
                 viewModel.fetchWeather(for: "Cairo")
             }
         }
+        .tint(currentTimeOfDay.textColor)
     }
 }
 

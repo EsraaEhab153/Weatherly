@@ -63,3 +63,33 @@ extension String {
         }
     }
 }
+
+
+extension String {
+    func toHourlyTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        guard let date = formatter.date(from: self) else { return self }
+        
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        let dateHour = Calendar.current.component(.hour, from: date)
+        
+        if Calendar.current.isDateInToday(date) && currentHour == dateHour {
+            return "Now"
+        }
+        
+        formatter.dateFormat = "ha"
+        return formatter.string(from: date)
+    }
+}
+
+extension String {
+    func toFormattedDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let date = formatter.date(from: self) else { return self }
+        formatter.dateFormat = "EEEE, d MMM yyyy"
+        return formatter.string(from: date)
+    }
+}

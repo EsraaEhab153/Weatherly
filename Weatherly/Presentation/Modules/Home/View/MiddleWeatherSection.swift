@@ -20,19 +20,22 @@ struct MiddleWeatherSection: View {
             Divider()
             
             ForEach(forecastDays, id: \.date) { day in
-                HStack {
-                    Text(day.date.toDayName())
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    AsyncImage(url: URL(string: "https:\(day.day.condition.icon)")) { image in
-                        image.resizable().scaledToFit()
-                    } placeholder: {
-                        ProgressView()
+                NavigationLink(destination: HourlyForecastView(hours: day.hour,dateString: day.date)) {
+                    HStack {
+                        Text(day.date.toDayName())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        AsyncImage(url: URL(string: "https:\(day.day.condition.icon)")) { image in
+                            image.resizable().scaledToFit()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 30, height: 30)
+                        Text("\(day.day.mintempC, specifier: "%.1f")° - \(day.day.maxtempC, specifier: "%.1f")°")
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                    .frame(width: 30, height: 30)
-                    Text("\(day.day.mintempC, specifier: "%.1f")° - \(day.day.maxtempC, specifier: "%.1f")°")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
+                .buttonStyle(PlainButtonStyle())
                 Divider()
             }
         }
