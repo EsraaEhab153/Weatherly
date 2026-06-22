@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    
+    @StateObject private var locationMananger = LocationManager()
     var currentTimeOfDay : TimeOfDay {
         Date().timeOfDay
     }
@@ -21,7 +21,7 @@ struct HomeView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                if viewModel.isLoading {
+                if viewModel.isLoading || locationMananger.isLoading {
                     ProgressView()
                         .scaleEffect(1.5)
                         .tint(currentTimeOfDay.textColor)
@@ -44,7 +44,16 @@ struct HomeView: View {
                 }
             }
             .onAppear {
-                viewModel.fetchWeather(for: "Cairo")
+                //viewModel.fetchWeather(for: "Cairo")
+                locationMananger.requsetLocation()
+            }
+            .onChange(of: locationMananger.location){ newLocation in
+                if let location = newLocation{
+                    let lat = location.coordinate.latitude
+                    let lon = location.coordinate.longitude
+                    viewModel.fetchWeather(for: "\(lat),\(lon)")
+                }
+                
             }
         }
         .tint(currentTimeOfDay.textColor)
