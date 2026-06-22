@@ -12,6 +12,7 @@
 		CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */; };
 		CA4EE6E22FE6260800745815 /* StateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4EE6E12FE6260800745815 /* StateCard.swift */; };
 		CA6D89462FE9EA5F00FE4672 /* HourlyForeCastHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D89452FE9EA5F00FE4672 /* HourlyForeCastHeader.swift */; };
+		CA6D89492FE9F5DF00FE4672 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D89482FE9F5DF00FE4672 /* LocationManager.swift */; };
 		CAA07A322FE6650A00D7BE8F /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA07A312FE6650A00D7BE8F /* HourlyForecastView.swift */; };
 		CAC631472FE45B5F00F161DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631462FE45B5F00F161DF /* Constants.swift */; };
 		CAC631492FE45C2C00F161DF /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */; };
@@ -31,6 +32,7 @@
 		CA4EE6DF2FE625AD00745815 /* BottomStateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStateSection.swift; sourceTree = "<group>"; };
 		CA4EE6E12FE6260800745815 /* StateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCard.swift; sourceTree = "<group>"; };
 		CA6D89452FE9EA5F00FE4672 /* HourlyForeCastHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForeCastHeader.swift; sourceTree = "<group>"; };
+		CA6D89482FE9F5DF00FE4672 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CAA07A312FE6650A00D7BE8F /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		CAC631462FE45B5F00F161DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAC631482FE45C2C00F161DF /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA6D89472FE9F5BB00FE4672 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CA6D89482FE9F5DF00FE4672 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		CAA07A2F2FE663F200D7BE8F /* HourlyForecast */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 		CAC759F32FE34B8C002C9066 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA6D89472FE9F5BB00FE4672 /* Location */,
 				CAC631522FE49A8000F161DF /* Extensions */,
 				CAC631452FE45B3700F161DF /* Constants */,
 			);
@@ -311,6 +322,7 @@
 			files = (
 				CA6D89462FE9EA5F00FE4672 /* HourlyForeCastHeader.swift in Sources */,
 				CAC759E22FE327C9002C9066 /* ContentView.swift in Sources */,
+				CA6D89492FE9F5DF00FE4672 /* LocationManager.swift in Sources */,
 				CAC631512FE475A600F161DF /* HomeView.swift in Sources */,
 				CA4EE6E02FE625AE00745815 /* BottomStateSection.swift in Sources */,
 				CAC6314F2FE4716200F161DF /* HomeViewModel.swift in Sources */,
@@ -458,6 +470,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Weatherly/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the local weather forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,6 +499,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Weatherly/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the local weather forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
