@@ -9,6 +9,7 @@ import Foundation
 
 protocol WeatherNetworkService {
     func fetchWeather(for location: String, days: Int) async throws -> WeatherResponse
+    func searchCity(query: String) async throws -> [SearchLocation]
 }
 
 enum NetworkError: Error {
@@ -41,4 +42,26 @@ class WeatherNetworkManager: WeatherNetworkService {
             throw NetworkError.decodingError
         }
     }
+    
+    func searchCity(query: String) async throws -> [SearchLocation] {
+            let urlString = "\(Constants.baseURL)/search.json?key=\(Constants.apiKey)&q=\(query)"
+            
+            guard let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                  let url = URL(string: encodedString) else {
+                throw NetworkError.invalidURL
+            }
+            
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw NetworkError.invalidResponse
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                return try decoder.decode([SearchLocation].self, from: data)
+            } catch {
+                throw NetworkError.decodingError
+            }
+        }
 }
