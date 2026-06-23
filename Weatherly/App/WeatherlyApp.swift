@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct WeatherlyApp: App {
@@ -13,5 +14,6 @@ struct WeatherlyApp: App {
         WindowGroup {
             HomeView()
         }
+        .modelContainer(for:SavedLocations.self)
     }
 }
