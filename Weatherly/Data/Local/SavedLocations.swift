@@ -14,11 +14,17 @@ class SavedLocations{
     var country : String
     var lat : Double
     var lon : Double
+    var maxTemp: Double?
+    var minTemp: Double?
+    var iconUrl: String?
     
     init(name: String, country: String, lat: Double, lon: Double) {
         self.name = name
         self.country = country
         self.lat = lat
         self.lon = lon
+        self.maxTemp = maxTemp
+        self.minTemp = minTemp
+        self.iconUrl = iconUrl
     }
 }

@@ -12,7 +12,7 @@ import SwiftData
 struct WeatherlyApp: App {
     var body: some Scene {
         WindowGroup {
-          HomeView()
+     HomeView()
             //SearchLocationsView()
         }
         .modelContainer(for:SavedLocations.self)

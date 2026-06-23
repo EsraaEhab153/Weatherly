@@ -50,13 +50,7 @@ struct SearchLocationsView: View {
                         Section("Saved Locations") {
                             ForEach(savedLocations) { location in
                                 NavigationLink(destination: Text("Details for \(location.name)")) {
-                                    VStack(alignment: .leading) {
-                                        Text(location.name)
-                                            .font(.headline)
-                                        Text(location.country)
-                                            .font(.subheadline)
-                                            .foregroundColor(.gray)
-                                    }
+                                    SavedLocationRow(location: location)
                                 }
                             }
                             .onDelete(perform: confirmDelete)
