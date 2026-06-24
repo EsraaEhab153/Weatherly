@@ -55,7 +55,7 @@ struct SearchLocationsView: View {
                     else {
                         Section("Saved Locations") {
                             ForEach(savedLocations) { location in
-                                NavigationLink(destination: Text("Details for \(location.name)")) {
+                                NavigationLink(destination: CityDetailsView(cityName: location.name)) {
                                     SavedLocationRow(location: location)
                                 }
                                 .listRowBackground(Color.clear)
