@@ -93,3 +93,19 @@ extension String {
         return formatter.string(from: date)
     }
 }
+
+extension SavedLocations {
+    var cityTimeOfDay: TimeOfDay {
+        guard let timeString = localTime else {
+            return Date().timeOfDay
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        if let date = formatter.date(from: timeString) {
+            return date.timeOfDay 
+        }
+        return Date().timeOfDay
+    }
+}

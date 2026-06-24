@@ -17,6 +17,7 @@ class SavedLocations{
     var maxTemp: Double?
     var minTemp: Double?
     var iconUrl: String?
+    var localTime: String?
     
     init(name: String, country: String, lat: Double, lon: Double) {
         self.name = name
@@ -26,5 +27,6 @@ class SavedLocations{
         self.maxTemp = maxTemp
         self.minTemp = minTemp
         self.iconUrl = iconUrl
+        self.localTime = localTime
     }
 }

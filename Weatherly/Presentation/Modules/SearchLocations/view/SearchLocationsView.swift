@@ -52,6 +52,9 @@ struct SearchLocationsView: View {
                                 NavigationLink(destination: Text("Details for \(location.name)")) {
                                     SavedLocationRow(location: location)
                                 }
+                                .listRowBackground(Color.clear)
+                                .listRowSeparator(.hidden)
+                                .buttonStyle(PlainButtonStyle())
                             }
                             .onDelete(perform: confirmDelete)
                         }
@@ -72,6 +75,7 @@ struct SearchLocationsView: View {
                 Text("Are you sure you want to remove \(locationToDelete?.name ?? "this city") from your favorites?")
             }
         } 
+        
     }
         
     private func saveLocation(_ searchLoc: SearchLocation) {

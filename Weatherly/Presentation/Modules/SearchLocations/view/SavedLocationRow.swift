@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SavedLocationRow: View {
     let location: SavedLocations
-    
     @Environment(\.modelContext) private var modelContext
-    
     @State private var isLoading = false
     private let networkManager = WeatherNetworkManager()
     
@@ -20,9 +18,10 @@ struct SavedLocationRow: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(location.name)
                     .font(.headline)
+                    .foregroundColor(location.cityTimeOfDay.textColor) 
                 Text(location.country)
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(location.cityTimeOfDay.textColor.opacity(0.7))
             }
             
             Spacer()
@@ -40,27 +39,33 @@ struct SavedLocationRow: View {
                         Text("\(Int(max))°")
                             .font(.body)
                             .bold()
+                            .foregroundColor(location.cityTimeOfDay.textColor)
                         Text("\(Int(min))°")
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(location.cityTimeOfDay.textColor.opacity(0.7))
                     }
                 }
-            }
-            else if isLoading {
+            } else if isLoading {
                 ProgressView()
+                    .tint(location.cityTimeOfDay.textColor)
             }
         }
-        .padding(.vertical, 5)
+        .padding()
+        .background(
+            Image(location.cityTimeOfDay.backgroundImageName)
+                .resizable()
+                .scaledToFill()
+        )
+        .cornerRadius(15) 
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
         .task {
             await updateWeatherIfNeeded()
         }
     }
     
     private func updateWeatherIfNeeded() async {
-        if location.maxTemp == nil {
-            isLoading = true
-        }
-        
+        if location.maxTemp == nil { isLoading = true }
         do {
             let query = "\(location.lat),\(location.lon)"
             let weather = try await networkManager.fetchWeather(for: query)
@@ -69,12 +74,12 @@ struct SavedLocationRow: View {
                 location.maxTemp = today.day.maxtempC
                 location.minTemp = today.day.mintempC
                 location.iconUrl = weather.current.condition.icon
+                location.localTime = weather.location.localtime
                 
                 try? modelContext.save()
             }
             isLoading = false
         } catch {
-            print("Offline or Error fetching row weather: \(error.localizedDescription)")
             isLoading = false
         }
     }
