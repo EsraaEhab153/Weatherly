@@ -10,6 +10,7 @@ import SwiftUI
 struct MiddleWeatherSection: View {
     
     let forecastDays: [ForecastDay]
+    let timeOfDay: TimeOfDay
     
     var body: some View {
         VStack{
@@ -20,7 +21,7 @@ struct MiddleWeatherSection: View {
             Divider()
             
             ForEach(forecastDays, id: \.date) { day in
-                NavigationLink(destination: HourlyForecastView(hours: day.hour,dateString: day.date)) {
+                NavigationLink(destination: HourlyForecastView(hours: day.hour,dateString: day.date, timeOfDay: timeOfDay)) {
                     HStack {
                         Text(day.date.toDayName())
                             .frame(maxWidth: .infinity, alignment: .leading)

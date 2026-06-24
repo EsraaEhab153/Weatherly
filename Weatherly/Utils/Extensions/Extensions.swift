@@ -93,3 +93,21 @@ extension String {
         return formatter.string(from: date)
     }
 }
+
+extension SavedLocations {
+    var cityTimeOfDay: TimeOfDay {
+        return localTime?.toCityTimeOfDay() ?? Date().timeOfDay
+    }
+}
+
+extension String {
+    func toCityTimeOfDay() -> TimeOfDay {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        if let date = formatter.date(from: self) {
+            return date.timeOfDay
+        }
+        return Date().timeOfDay 
+    }
+}
