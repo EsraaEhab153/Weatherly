@@ -37,6 +37,7 @@ struct HomeView: View {
                         }
                         .padding()
                     }
+                    .safeAreaPadding(.bottom, 100)
                     .foregroundColor(currentTimeOfDay.textColor)
                 } else if let errorMessage = viewModel.errorMessage {
                     Text("Error: \(errorMessage)")

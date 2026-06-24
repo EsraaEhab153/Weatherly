@@ -17,10 +17,16 @@ struct SearchLocationsView: View {
     @State private var showDeleteAlert = false
     @State private var locationToDelete: SavedLocations?
     
+    var currentTimeOfDay : TimeOfDay {
+        Date().timeOfDay
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.cyan.opacity(0.8).ignoresSafeArea()
+                Image(currentTimeOfDay.backgroundImageName)
+                    .resizable()
+                    .ignoresSafeArea()
                 
                 List {
                     if !searchViewModel.searchText.isEmpty {
