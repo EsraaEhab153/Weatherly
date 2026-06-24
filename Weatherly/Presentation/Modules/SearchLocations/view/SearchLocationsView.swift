@@ -28,70 +28,76 @@ struct SearchLocationsView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                List {
-                    if !searchViewModel.searchText.isEmpty {
-                        Section("Search Results") {
-                            if searchViewModel.isLoading {
-                                ProgressView()
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                            } else {
-                                ForEach(searchViewModel.searchResults) { location in
-                                    Button(action: {
-                                        saveLocation(location)
-                                    }) {
-                                        HStack {
-                                            Text(location.name)
-                                                .foregroundColor(.primary)
-                                            Spacer()
-                                            Text(location.country)
-                                                .font(.caption)
-                                                .foregroundColor(.gray)
+                if savedLocations.isEmpty && searchViewModel.searchText.isEmpty {
+                    VStack(spacing: 20) {
+                        Image("weather-logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(currentTimeOfDay.textColor.opacity(0.6))
+                        
+                        Text("No saved locations yet")
+                            .font(.title3)
+                            .bold()
+                            .foregroundColor(currentTimeOfDay.textColor)
+                    }
+                } else {
+                    List {
+                        if !searchViewModel.searchText.isEmpty {
+                            Section("Search Results") {
+                                if searchViewModel.isLoading {
+                                    ProgressView()
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                } else {
+                                    ForEach(searchViewModel.searchResults) { location in
+                                        Button(action: { saveLocation(location) }) {
+                                            HStack {
+                                                Text(location.name).foregroundColor(.primary)
+                                                Spacer()
+                                                Text(location.country).font(.caption).foregroundColor(.gray)
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                    }
-                    else {
-                        Section {
-                            ForEach(savedLocations) { location in
-                                NavigationLink(destination: CityDetailsView(cityName: location.name)) {
-                                    SavedLocationRow(location: location)
+                        } else {
+                            Section {
+                                ForEach(savedLocations) { location in
+                                    NavigationLink(destination: CityDetailsView(cityName: location.name)) {
+                                        SavedLocationRow(location: location)
+                                    }
+                                    .listRowBackground(Color.clear)
+                                    .listRowSeparator(.hidden)
+                                    .buttonStyle(PlainButtonStyle())
                                 }
-                                .listRowBackground(Color.clear)
-                                .listRowSeparator(.hidden)
-                                .buttonStyle(PlainButtonStyle())
+                                .onDelete(perform: confirmDelete)
+                            } header: {
+                                Text("Saved Locations")
+                                    .font(.headline)
+                                    .foregroundColor(currentTimeOfDay.textColor)
                             }
-                            .onDelete(perform: confirmDelete)
-                        } header: {
-                            Text("Saved Locations")
-                                .font(.headline)
-                                .foregroundColor(currentTimeOfDay.textColor)
                         }
                     }
+                    .scrollContentBackground(.hidden)
                 }
-                .scrollContentBackground(.hidden)
-                .navigationTitle("Favorites")
-                .searchable(text: $searchViewModel.searchText, prompt: "Search for a city...")
-                .safeAreaPadding(.bottom, 100)
-                .toolbarBackground(.hidden, for: .navigationBar)
-                                .toolbarBackground(Color.clear, for: .navigationBar)
             }
+            .navigationTitle("Favorites")
+            .searchable(text: $searchViewModel.searchText, prompt: "Search for a city...")
+            .safeAreaPadding(.bottom, 100)
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .toolbarBackground(Color.clear, for: .navigationBar)
             .alert("Delete Location", isPresented: $showDeleteAlert) {
                 Button("Cancel", role: .cancel) { }
                 Button("Delete", role: .destructive) {
-                    if let location = locationToDelete {
-                        deleteLocation(location)
-                    }
+                    if let location = locationToDelete { deleteLocation(location) }
                 }
             } message: {
                 Text("Are you sure you want to remove \(locationToDelete?.name ?? "this city") from your favorites?")
             }
-        } 
+        }
         .preferredColorScheme(currentTimeOfDay == .morning ? .light : .dark)
-        
     }
-        
+    
     private func saveLocation(_ searchLoc: SearchLocation) {
         let newLocation = SavedLocations(name: searchLoc.name, country: searchLoc.country, lat: searchLoc.lat, lon: searchLoc.lon)
         modelContext.insert(newLocation)
@@ -109,7 +115,7 @@ struct SearchLocationsView: View {
         modelContext.delete(location)
         locationToDelete = nil
     }
-} 
+}
 
 #Preview {
     SearchLocationsView()
