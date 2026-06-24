@@ -10,7 +10,10 @@ import SwiftUI
 struct SavedLocationRow: View {
     let location: SavedLocations
     @Environment(\.modelContext) private var modelContext
+    
     @State private var isLoading = false
+    @State private var hasFetched = false 
+    
     private let networkManager = WeatherNetworkManager()
     
     var body: some View {
@@ -18,7 +21,7 @@ struct SavedLocationRow: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(location.name)
                     .font(.headline)
-                    .foregroundColor(location.cityTimeOfDay.textColor) 
+                    .foregroundColor(location.cityTimeOfDay.textColor)
                 Text(location.country)
                     .font(.subheadline)
                     .foregroundColor(location.cityTimeOfDay.textColor.opacity(0.7))
@@ -31,7 +34,7 @@ struct SavedLocationRow: View {
                     AsyncImage(url: URL(string: "https:\(iconUrl)")) { image in
                         image.resizable().scaledToFit()
                     } placeholder: {
-                        ProgressView()
+                        ProgressView().tint(location.cityTimeOfDay.textColor)
                     }
                     .frame(width: 40, height: 40)
                     
@@ -56,19 +59,21 @@ struct SavedLocationRow: View {
                 .resizable()
                 .scaledToFill()
         )
-        .cornerRadius(15) 
+        .cornerRadius(15)
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
         .task {
+            guard !hasFetched else { return }
+            hasFetched = true
             await updateWeatherIfNeeded()
         }
     }
     
+    @MainActor
     private func updateWeatherIfNeeded() async {
         if location.maxTemp == nil { isLoading = true }
         do {
-            let query = "\(location.lat),\(location.lon)"
-            let weather = try await networkManager.fetchWeather(for: query)
+            let weather = try await networkManager.fetchWeather(for: location.name)
             
             if let today = weather.forecast.forecastday.first {
                 location.maxTemp = today.day.maxtempC
@@ -80,6 +85,7 @@ struct SavedLocationRow: View {
             }
             isLoading = false
         } catch {
+            print("Error fetching row weather for \(location.name): \(error)")
             isLoading = false
         }
     }
