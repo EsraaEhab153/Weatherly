@@ -69,6 +69,9 @@ struct SearchLocationsView: View {
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Favorites")
                 .searchable(text: $searchViewModel.searchText, prompt: "Search for a city...")
+                .safeAreaPadding(.bottom, 100)
+                .toolbarBackground(.hidden, for: .navigationBar)
+                                .toolbarBackground(Color.clear, for: .navigationBar)
             }
             .alert("Delete Location", isPresented: $showDeleteAlert) {
                 Button("Cancel", role: .cancel) { }
