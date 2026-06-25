@@ -57,6 +57,7 @@ struct MainTabView: View {
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
     }
+    
 }
 
 struct TabBarButton: View {

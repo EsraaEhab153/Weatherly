@@ -59,6 +59,7 @@ struct HomeView: View {
             }
         }
         .tint(cityTimeOfDay.textColor)
+        .preferredColorScheme(cityTimeOfDay == .morning ? .light : .dark)
     }
 }
 
