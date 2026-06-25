@@ -96,16 +96,18 @@ extension String {
 
 extension SavedLocations {
     var cityTimeOfDay: TimeOfDay {
-        guard let timeString = localTime else {
-            return Date().timeOfDay
-        }
-        
+        return localTime?.toCityTimeOfDay() ?? Date().timeOfDay
+    }
+}
+
+extension String {
+    func toCityTimeOfDay() -> TimeOfDay {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-        if let date = formatter.date(from: timeString) {
-            return date.timeOfDay 
+        if let date = formatter.date(from: self) {
+            return date.timeOfDay
         }
-        return Date().timeOfDay
+        return Date().timeOfDay 
     }
 }

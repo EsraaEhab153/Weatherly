@@ -53,7 +53,7 @@ struct SearchLocationsView: View {
                         }
                     }
                     else {
-                        Section("Saved Locations") {
+                        Section {
                             ForEach(savedLocations) { location in
                                 NavigationLink(destination: CityDetailsView(cityName: location.name)) {
                                     SavedLocationRow(location: location)
@@ -63,6 +63,10 @@ struct SearchLocationsView: View {
                                 .buttonStyle(PlainButtonStyle())
                             }
                             .onDelete(perform: confirmDelete)
+                        } header: {
+                            Text("Saved Locations")
+                                .font(.headline)
+                                .foregroundColor(currentTimeOfDay.textColor)
                         }
                     }
                 }
@@ -84,6 +88,7 @@ struct SearchLocationsView: View {
                 Text("Are you sure you want to remove \(locationToDelete?.name ?? "this city") from your favorites?")
             }
         } 
+        .preferredColorScheme(currentTimeOfDay == .morning ? .light : .dark)
         
     }
         

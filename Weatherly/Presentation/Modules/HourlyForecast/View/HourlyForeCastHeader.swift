@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HourlyForeCastHeader: View {
     let hours: [Hour]
+    let timeOfDay: TimeOfDay
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
@@ -16,6 +18,7 @@ struct HourlyForeCastHeader: View {
                     HStack {
                         Text(hour.time.toHourlyTime())
                             .font(.title3)
+                            .foregroundColor(timeOfDay.textColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         AsyncImage(url: URL(string: "https:\(hour.condition.icon)")) { image in
@@ -28,6 +31,7 @@ struct HourlyForeCastHeader: View {
                         
                         Text("\(Int(hour.tempC))°")
                             .font(.title2)
+                            .foregroundColor(timeOfDay.textColor)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     .padding(.horizontal)
